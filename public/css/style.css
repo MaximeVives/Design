@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); /*'Roboto'*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); /*'Montserrat'*/
+/*Import des google fonts*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+    scroll-behavior: smooth; 
+    text-decoration: none; 
+    font-family: 'Roboto';
+}
+
+.struc{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    height: 100vh;
+}
+
+.bloc1{
+    background-color: #343e48;
+}
+
+.bloc1 .logo, .bloc1 .slideshow-container .mySlides, .bloc1 .three-points{
+    justify-content: center;
+    text-align: center;
+}
+
+.fa-bars{
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    padding: 30px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+    .mySlides {
+    display: none;
+}
+
+/* The dots/bullets/indicators */
+.three-points .fas {
+    cursor: pointer;
+    padding: 0% 10px 0% 0%;
+    color: whitesmoke;
+    display: inline-block;
+    transition: color 0.6s ease;
+}
+
+.active, .three-points .fas:hover {
+    color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    margin-top: 50px;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+nav{
+    position: absolute;
+    display: inline-block;
+    transform: translate(0, 15vh) rotate(-90deg);
+}
+
+nav ul{
+    display: inline-block;
+    list-style: none;
+    padding-bottom: 70%;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+
+.bloc2{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    background-color: whitesmoke;
+}
+
+.top-part{
+    /* justify-content: center;
+    align-items: center; */
+    margin: auto 10px auto 10px;
+}
+
+.search-box{
+    display: inline-block;
+    /* margin: 30px 0 0 15px; */
+    padding: 10px;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    transition: 0.4s;
+    background: none;
+    width: 200px;
+}
+
+.search-box:hover{
+    border: 3px solid #343e48;
+}
+
+.search-text{
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #676f7B;
+    color: #343e48;
+    font-size: 16px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.search-box .fa-search{
+    text-decoration: none;
+    color: #343e48;
+    font-size: 16px;
+}
+
+.log{
+    display: block;
+    float: right;
+    /* margin: 30px 10px 0 0; */
+}
+
+.product-description{
+    margin: auto;
+}
