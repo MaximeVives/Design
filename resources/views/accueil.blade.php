@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="image/logo_Peugeot.png" type="image/x-icon">
+        <link rel="shortcut icon" href="image/logo_adidas_300px.png" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/fb3e250c04.js" crossorigin="anonymous"></script>
         <title>Design</title>
@@ -15,7 +15,7 @@
                 <a href="#"><i class="fas fa-bars"></i></a>
 
                 <div class="logo">
-                    <img src="image/logo_Peugeot_very_little.png" alt="logo Peugeot">
+                    <img src="image/logo_adidas_100px.png" alt="logo Adidas">
                 </div> 
 
                 <nav>
@@ -30,15 +30,15 @@
                 <div class="slideshow-container">
                     <!-- Full-width images with number and caption text -->
                     <div class="mySlides fade">
-                        <img src="image/P_508_1.png">
+                        <img src="image/A_vitality_1.png">
                     </div>
 
                     <div class="mySlides fade">
-                        <img src="image/P_508_2.png">
+                        <img src="image/A_vitality_2.png">
                     </div>
 
                     <div class="mySlides fade">
-                        <img src="image/P_508_3.png">
+                        <img src="image/A_vitality_3.png">
                     </div>
                 </div>
                 <br>
@@ -70,20 +70,20 @@
 
                 <div class="product-description">
                     <div class="product-name">
-                        <h1>name of car</h1>
+                        <h1>Adidas X Vitality</h1>
                     </div>
                     <div class="product-ref">
-                        <p>SportBack - Clim - Park Assist</p>
+                        <p>Edition Spécial</p>
                     </div>
                     <div class="product-size-qty">
                         <!-- <input list="type_car" name="Car Type">
                             <datalist id="type_car"> -->
                             <select>
-                                <option value="Standard">Standard</option>
-                                <option value="SW">SW</option>
-                                <option value="Coupé">Coupé</option>
-                                <option value="Cabriolet">Cabriolet</option>
-                                <option value="Utilitaire">Utilitaire</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
                             <!-- </datalist> -->
                             </select>
                     </div>
