@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="image/logo_adidas_300px.png" type="image/x-icon">
+        <link rel="shortcut icon" href="image/logo_adidas_100px.png" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/fb3e250c04.js" crossorigin="anonymous"></script>
         <title>Design</title>
@@ -74,6 +74,7 @@
                     </div>
                     <div class="product-ref">
                         <p>Edition Spécial</p>
+                        <!-- <p>ROAD RAGE</p> -->
                     </div>
                     <div class="product-size-qty">
                         <!-- <input list="type_car" name="Car Type">
@@ -91,9 +92,7 @@
                         <button>buy now</button>
                     </div>
                     <div class="product-availability"></div>
-                </div>
-                
-                
+                </div>  
             </div>
         </div>
     </body>

@@ -2,7 +2,20 @@
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); /*'Roboto'*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); /*'Montserrat'*/
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap'); /*'Alata'*/
+@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap'); /*'Zhi Mang Xing'*/
 /*Import des google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Frijole&display=swap'); /*Frijole*/
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap'); /*'Blac Ops One'*/
+
+
+@font-face {
+    font-family: "RoadRage";
+    src: url("../font/RoadRage.eot");
+    src: url("../font/RoadRage.woff") format("woff"),
+    url("../font/Road_Rage.otf") format("opentype"),
+    url("../font/RoadRage.svg") format("svg");
+}
 
 *{
     box-sizing: border-box;
@@ -33,9 +46,9 @@
 
 .fa-bars{
     position: absolute;
-    color: white;
+    color: black;
     font-size: 40px;
-    padding: 30px;
+    padding: 40px 40px 40px 50px;
 }
 
 .slideshow-container {
@@ -59,7 +72,7 @@
 .three-points .fas {
     cursor: pointer;
     padding: 0% 10px 0% 0%;
-    color: whitesmoke;
+    color: white;
     display: inline-block;
     transition: color 0.6s ease;
 }
@@ -105,7 +118,8 @@ nav ul li{
 
 nav ul li a{
     font-family: 'Montserrat';
-    color: white;
+    font-weight: bold;
+    color: black;
     font-size: 24px;
     text-transform: uppercase;
     padding-right: 10px;
@@ -114,11 +128,10 @@ nav ul li a{
 }
 
 
-
 .bloc2{
     display: grid;
     grid-template-rows: 20% 80%;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .top-part{
@@ -147,7 +160,7 @@ nav ul li a{
     border: none;
     outline: none;
     border-bottom: 1px solid #676f7B;
-    color: #f6c932;
+    color: #000000;
     font-size: 16px;
     width: 150px;
     cursor: pointer;
@@ -165,6 +178,29 @@ nav ul li a{
     /* margin: 30px 10px 0 0; */
 }
 
+.log a{
+    color: #f6c932;
+    padding-bottom: 2px;
+    border-bottom: transparent solid 1px;
+    transition: 0.4s;
+}
+
+.log a:hover{
+    border-bottom: #f6c932 solid 1px;
+}
+
 .product-description{
     margin: auto;
+}
+
+.product-name h1{
+    font-size: 50px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.product-ref p{
+    font-size: 20px;
+    font-family: 'RoadRage';
+    /* text-align: center; */
+    color: #f6c932;
 }
