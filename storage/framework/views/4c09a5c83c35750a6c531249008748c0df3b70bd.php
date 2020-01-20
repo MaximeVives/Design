@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="image/logo_adidas_300px.png" type="image/x-icon">
+        <link rel="shortcut icon" href="image/logo_adidas_100px.png" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/fb3e250c04.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>Design</title>
     </head>
     <body>
@@ -51,8 +52,6 @@
                 </div>
             </div>
 
-
-
             <div class="bloc2">
                 <div class="top-part">
                     <div class="search-box">
@@ -63,8 +62,8 @@
                     </div>
                 
                     <div class="log">
-                        <p>Pas encore de compte ? <a href="#">Inscrivez-vous</a></p>
-                        <p>Sinon <a href="#">Connectez-vous</a></p>
+                        <p>No account yet ? <a href="#">Sign-up</a></p>
+                        <p>Else <a href="#">Log In</a></p>
                     </div>
                 </div>
 
@@ -73,31 +72,64 @@
                         <h1>Adidas X Vitality</h1>
                     </div>
                     <div class="product-ref">
-                        <p>Edition Spécial</p>
+                        <p>Special Edition</p>
                     </div>
-                    <div class="product-size-qty">
-                        <!-- <input list="type_car" name="Car Type">
-                            <datalist id="type_car"> -->
-                            <select>
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                            <!-- </datalist> -->
-                            </select>
+                    <div class="product-size">
+                        <select class="size">
+                            <option id="default_size" value="0">Size :</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="40">41</option>
+                            <option value="40">42</option>
+                            <option value="40">43</option>
+                        </select>
+                    </div>
+                    <div class="product-qty">
+                        <select class="qty">
+                            <option id="default_qty" value="0">Amount :</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </div>
                     <div class="product-buy">
-                        <button>buy now</button>
+                        <a id="add_cart" href="#" onClick="return false">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Add To Cart
+                        </a>
                     </div>
-                    <div class="product-availability"></div>
-                </div>
-                
-                
+                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock"></span> In stock</span></div>
+                </div>  
             </div>
         </div>
+        <!-- <footer>
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </footer> -->
+        <!-- A REFLECHIR -->
+
     </body>
     <script language="javascript">
+        $(document).ready(function(){
+            $(".qty").click(function(){
+                $("#default_qty").attr('disabled', '');
+            });
+            
+            $(".size").click(function(){
+                $("#default_size").attr('disabled', '');
+            });
+        });
+/* Le retour de la valeur par défaut de la taille et de la quantité est impossible
+Soit "Size :" et  "Amount :"*/
+
         var slideIndex = 1;
         showSlides(slideIndex);
 

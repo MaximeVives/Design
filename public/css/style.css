@@ -137,7 +137,7 @@ nav ul li a{
 .top-part{
     /* justify-content: center;
     align-items: center; */
-    margin: auto 10px auto 10px;
+    margin: auto 40px auto 40px;
 }
 
 .search-box{
@@ -197,10 +197,200 @@ nav ul li a{
     font-size: 50px;
     font-family: 'Montserrat';
     text-align: center;
+    text-transform: uppercase;
 }
 .product-ref p{
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 80%;
     font-family: 'RoadRage';
     /* text-align: center; */
     color: #f6c932;
 }
+
+.size, .qty{
+    outline: none;
+    float: left;/**/
+    width: 80%;
+    height: 100%;
+    padding: 0 0 0 8px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    border: 0;
+    border-bottom: solid 2px #f6c932;
+}
+
+option{
+    color: white;
+    background-color: #f6c932;
+}
+
+.product-qty, .product-size{
+    display: inline-block;
+    position: relative;
+    width: 45%;
+    height: 50px;
+    margin: 40px 0 30px 10px;
+    overflow: hidden;
+    line-height: 3;
+}
+
+.product-qty::after, .product-size::after{
+    content: '\25bc';
+    position: absolute;
+    top: 0;
+    right: 21%;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.product-size:hover::after{
+    color: #f6c932;
+}
+
+
+.product-buy{
+    display: block;
+    margin: 20px 0 0 10px;
+    width: 93%;
+    text-align: center;
+}
+
+#add_cart{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+#add_cart:hover{
+    color: white;
+    background: #f6c932;
+    box-shadow: 0 0 7px #f6c932, 0 0 14px #f6c932, 0 0 28px #f6c932;
+    transition-delay: 0.75s;
+}
+
+
+#add_cart span{
+	position: absolute;
+	display: block;
+}
+
+
+/*====================TOP========================*/
+#add_cart span:nth-child(1){
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #f6c932);
+}
+
+
+#add_cart:hover span:nth-child(1){
+	left: 100%;
+	transition: 0.6s;
+}
+/*==============================================*/
+
+
+/*======================BOT=========================*/
+#add_cart span:nth-child(3){
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #f6c932);
+}
+
+
+#add_cart:hover span:nth-child(3){
+	right: 100%;
+	transition: 1s;
+	transition-delay: 0.3s;
+}
+/*======================================================*/
+
+
+/*======================RIGHT=============================*/
+#add_cart span:nth-child(2){
+	top: -100%;
+	right: 0%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #f6c932);
+}
+
+#add_cart:hover span:nth-child(2){
+	top: 100%;
+	transition: 1s;
+	transition-delay: 0.15s;
+}
+/*===========================================================*/
+
+/*========================LEFT=============================*/
+#add_cart span:nth-child(4){
+	top: 100%;
+	left: 0%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #f6c932);
+}
+
+#add_cart:hover span:nth-child(4){
+	top: -100%;
+	transition: 1s;
+	transition-delay: 0.45s;
+}
+/*=====================================================================================*/
+
+
+.product-availability{
+    margin-top: 50px;
+}
+
+.product-availability p{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dot-stock{
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: green;
+    color: green;
+    box-shadow: 0 0 7px green, 0 0 14px green, 0 0 28px green;
+}
+
+/* footer{
+    display: grid;
+    grid-template-columns: calc(65%/2) calc(65%/2) 35%;
+    position: absolute;
+    bottom: -0px;
+    left: 0;
+    height: 50px;
+    width: 100%;
+}
+
+.one{
+    background-color: hsla(0, 0%, 100%, 0.6);
+}
+
+.two{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.three{
+    background-color: #f6c832;
+}
+ */
+/* A REFLECHIR */
