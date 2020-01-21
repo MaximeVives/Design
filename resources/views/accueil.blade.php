@@ -60,11 +60,26 @@
                             <a href="#"><i class="fas fa-search"></i></a>
                         </form>
                     </div>
-                
+                <?php
+                    if (!(Auth::check())) {
+                        // The user is logged in...
+                    
+                ?>
                     <div class="log">
-                        <p>No account yet ? <a href="#">Sign-up</a></p>
-                        <p>Else <a href="#">Log In</a></p>
+                        <p>No account yet ? <a href="/register">Sign-up</a></p>
+                        <p>Else <a href="/login">Log In</a></p>
                     </div>
+                <?php
+                    }
+                    else{
+                        ?>
+                    <div class="log">
+                        <p><a href="/logout">Disconnect</a></p><br>
+                        <p>Bonjour <?php echo(Auth::user()->prenom);?></p>
+                    </div>
+                        <?php
+                    }
+                ?>
                 </div>
 
                 <div class="product-description">
