@@ -61,11 +61,19 @@
 /* Hide the images by default */
 .mySlides {
     display: none;
+    /* filter: grayscale(100%);
+    transition: 0.4s; */
 }
 
 .mySlides img{
     width: 100%;
     height: 100%;
+    filter: grayscale(0%);
+    transition: 0.4s;
+}
+
+.mySlides:hover img{
+    filter: grayscale(100%);
 }
 
 /* The dots/bullets/indicators */
