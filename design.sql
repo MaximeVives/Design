@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 21 jan. 2020 à 22:17
+-- Généré le :  mer. 22 jan. 2020 à 21:37
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.19
 
@@ -25,15 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produit`
+-- Structure de la table `produits`
 --
 
-CREATE TABLE `produit` (
+CREATE TABLE `produits` (
   `id_produit` int(11) NOT NULL,
   `nom_produit` char(50) NOT NULL,
   `quantite_produit` int(11) NOT NULL,
   `prix_produit` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `produits`
+--
+
+INSERT INTO `produits` (`id_produit`, `nom_produit`, `quantite_produit`, `prix_produit`) VALUES
+(1, 'Adidas am4 vit.01', 10, 159.99),
+(3, 'oui', 12, 67),
+(4, 'oui', 12, 67);
 
 -- --------------------------------------------------------
 
@@ -68,10 +77,10 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `age`, `adresse`, `code_postal`, `vi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `vente`
+-- Structure de la table `ventes`
 --
 
-CREATE TABLE `vente` (
+CREATE TABLE `ventes` (
   `id_vente` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
   `id_produit` int(11) NOT NULL
@@ -82,9 +91,9 @@ CREATE TABLE `vente` (
 --
 
 --
--- Index pour la table `produit`
+-- Index pour la table `produits`
 --
-ALTER TABLE `produit`
+ALTER TABLE `produits`
   ADD PRIMARY KEY (`id_produit`);
 
 --
@@ -94,9 +103,9 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `vente`
+-- Index pour la table `ventes`
 --
-ALTER TABLE `vente`
+ALTER TABLE `ventes`
   ADD PRIMARY KEY (`id_vente`),
   ADD UNIQUE KEY `vente_AK` (`id_client`,`id_produit`);
 
@@ -105,10 +114,10 @@ ALTER TABLE `vente`
 --
 
 --
--- AUTO_INCREMENT pour la table `produit`
+-- AUTO_INCREMENT pour la table `produits`
 --
-ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `produits`
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -117,9 +126,9 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `vente`
+-- AUTO_INCREMENT pour la table `ventes`
 --
-ALTER TABLE `vente`
+ALTER TABLE `ventes`
   MODIFY `id_vente` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

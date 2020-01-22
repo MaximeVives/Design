@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-});
+// Route::get('/', function () {
+//     return view('accueil');
+// });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'importDataController@importProduit');
 
 Auth::routes();
 

@@ -375,9 +375,24 @@ option{
     width: 15px;
     border-radius: 50%;
     display: inline-block;
+}
+
+.green-dot{
     background-color: green;
     color: green;
     box-shadow: 0 0 7px green, 0 0 14px green, 0 0 28px green;
+}
+
+.orange-dot{
+    background-color: orange;
+    color: orange;
+    box-shadow: 0 0 7px orange, 0 0 14px orange, 0 0 28px orange;
+}
+
+.red-dot{
+    background-color: red;
+    color: red;
+    box-shadow: 0 0 7px red, 0 0 14px red, 0 0 28px red;
 }
 
 /* footer{

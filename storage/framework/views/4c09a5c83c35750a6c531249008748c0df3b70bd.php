@@ -61,9 +61,8 @@
                         </form>
                     </div>
                 <?php
+                
                     if (!(Auth::check())) {
-                        // The user is logged in...
-                    
                 ?>
                     <div class="log">
                         <p>No account yet ? <a href="/register">Sign-up</a></p>
@@ -76,6 +75,7 @@
                     <div class="log">
                         <p><a href="/logout">Disconnect</a></p><br>
                         <p>Bonjour <?php echo(Auth::user()->prenom);?></p>
+                        <!-- <?php echo e($dataProduit->nom_produit); ?> ----! THIS IS THE METHOD TO TAKE DATAS--> 
                     </div>
                         <?php
                     }
@@ -84,7 +84,8 @@
 
                 <div class="product-description">
                     <div class="product-name">
-                        <h1>Adidas X Vitality</h1>
+                        <!-- <h1>Adidas am4 vit.01</h1> -->
+                        <h1><?php echo e($dataProduit->nom_produit); ?></h1>
                     </div>
                     <div class="product-ref">
                         <p>Special Edition</p>
@@ -120,7 +121,26 @@
                             Add To Cart
                         </a>
                     </div>
-                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock"></span> In stock</span></div>
+                    <?php
+                        // $qty = $dataProduit->quantite_produit;
+                        // $qty=3;
+                        $qty=0;
+                        if($qty>5){
+                    ?>
+                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock green-dot"></span> In Stock</span></div>
+                    <?php
+                        }
+                        elseif ($qty>=1) {
+                    ?>
+                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock orange-dot"></span> Limited Amount</span></div>
+                    <?php   
+                        }
+                        else{
+                    ?>
+                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock red-dot"></span> Stock Shortage</span></div>
+                    <?php
+                        }
+                    ?>
                 </div>  
             </div>
         </div>
