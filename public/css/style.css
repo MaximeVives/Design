@@ -73,7 +73,8 @@
 }
 
 .mySlides:hover img{
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
+    transform: scale(1.2);
 }
 
 /* The dots/bullets/indicators */

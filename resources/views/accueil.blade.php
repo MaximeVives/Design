@@ -62,8 +62,6 @@
                     </div>
                 <?php
                     if (!(Auth::check())) {
-                        // The user is logged in...
-                    
                 ?>
                     <div class="log">
                         <p>No account yet ? <a href="/register">Sign-up</a></p>
