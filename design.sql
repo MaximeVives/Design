@@ -2,10 +2,10 @@
 -- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mer. 22 jan. 2020 à 21:37
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.19
+-- Host: localhost:3306
+-- Generation Time: Jan 23, 2020 at 03:58 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,35 +19,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `design`
+-- Database: `design`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produits`
+-- Table structure for table `produits`
 --
 
 CREATE TABLE `produits` (
   `id_produit` int(11) NOT NULL,
   `nom_produit` char(50) NOT NULL,
   `quantite_produit` int(11) NOT NULL,
-  `prix_produit` float NOT NULL
+  `prix_produit` float NOT NULL,
+  `url_produit` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `produits`
+-- Dumping data for table `produits`
 --
 
-INSERT INTO `produits` (`id_produit`, `nom_produit`, `quantite_produit`, `prix_produit`) VALUES
-(1, 'Adidas am4 vit.01', 10, 159.99),
-(3, 'oui', 12, 67),
-(4, 'oui', 12, 67);
+INSERT INTO `produits` (`id_produit`, `nom_produit`, `quantite_produit`, `prix_produit`, `url_produit`) VALUES
+(1, 'Adidas am4 vit.01', 10, 159.99, 'A_vitality'),
+(3, 'oui', 12, 67, ''),
+(4, 'oui', 12, 67, '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -67,7 +68,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `nom`, `prenom`, `age`, `adresse`, `code_postal`, `ville`, `email`, `password`, `remember_token`, `email_verified_at`, `created_at`, `updated_at`) VALUES
@@ -77,7 +78,7 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `age`, `adresse`, `code_postal`, `vi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ventes`
+-- Table structure for table `ventes`
 --
 
 CREATE TABLE `ventes` (
@@ -87,46 +88,46 @@ CREATE TABLE `ventes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `produits`
+-- Indexes for table `produits`
 --
 ALTER TABLE `produits`
   ADD PRIMARY KEY (`id_produit`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `ventes`
+-- Indexes for table `ventes`
 --
 ALTER TABLE `ventes`
   ADD PRIMARY KEY (`id_vente`),
   ADD UNIQUE KEY `vente_AK` (`id_client`,`id_produit`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `produits`
+-- AUTO_INCREMENT for table `produits`
 --
 ALTER TABLE `produits`
   MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `ventes`
+-- AUTO_INCREMENT for table `ventes`
 --
 ALTER TABLE `ventes`
   MODIFY `id_vente` int(11) NOT NULL AUTO_INCREMENT;

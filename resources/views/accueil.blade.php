@@ -29,18 +29,14 @@
                 </nav>
 
                 <div class="slideshow-container">
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_1.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_2.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_3.png">
-                    </div>
+                    
+                    <?php
+                        for ($i=1; $i < 4; $i++) { 
+                            echo('<div class="mySlides fade">
+                            <img src="image/'.$dataProduit->url_produit.'_'.$i.'.png">
+                        </div>');
+                        }
+                    ?>
                 </div>
                 <br>
 
@@ -122,9 +118,9 @@
                         </a>
                     </div>
                     <?php
-                        // $qty = $dataProduit->quantite_produit;
+                        $qty = $dataProduit->quantite_produit;
                         // $qty=3;
-                        $qty=0;
+                        // $qty=0;
                         if($qty>5){
                     ?>
                     <div class="product-availability"><p>Availability : </p><span><span class="dot-stock green-dot"></span> In Stock</span></div>
