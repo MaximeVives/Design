@@ -16,8 +16,9 @@
 // });
 
 Route::get('/', 'importDataController@importProduit');
+Route::get('/panier', 'importDataController@cartData')->name('panier');
+Route::get('/send-data','HomeController@sendData' )->name('send-data');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');

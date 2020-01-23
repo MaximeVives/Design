@@ -13,7 +13,30 @@
         <div class="struc">
 
             <div class="bloc1">
-                <a href="#"><i class="fas fa-bars"></i></a>
+            <?php
+            // PAs d'autres solution que cette méthode pour récupérer le panier de l'utilisateur 
+            if(Auth::check()){
+                $bdd = new PDO('mysql:host=localhost;dbname=design;charset=utf8', 'root', 'root');
+                $reponse = $bdd->prepare("CALL RecupPanier(:P_user);");
+    
+                $reponse->execute(array(':P_user' => Auth::id()));
+                $i=0;
+			
+                while($donnees = $reponse->fetch()){
+                    $listPanier[$i] = $donnees["id_produit"];
+                    $i = $i+1;
+                }
+                $reponse->closeCursor();
+            
+            ?>
+                <div class="cart">
+                    <a href="/panier"><img class="cart-logo" src="svg/shopping-bag.svg" alt="cart">
+                        <span class="notif-article"><?php echo($i);?></span>
+                    </a>
+                </div>
+            <?php
+                }
+            ?>
 
                 <div class="logo">
                     <img src="image/logo_adidas_100px.png" alt="logo Adidas">
@@ -29,18 +52,14 @@
                 </nav>
 
                 <div class="slideshow-container">
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_1.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_2.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="image/A_vitality_3.png">
-                    </div>
+                    
+                    <?php
+                        for ($i=1; $i < 4; $i++) { 
+                            echo('<div class="mySlides fade">
+                            <img src="image/'.$dataProduit->url_produit.'_'.$i.'.png">
+                        </div>');
+                        }
+                    ?>
                 </div>
                 <br>
 
@@ -112,8 +131,11 @@
                             <option value="5">5</option>
                         </select>
                     </div>
+                    <?php
+                    if(Auth::check()){
+                        ?>
                     <div class="product-buy">
-                        <a id="add_cart" href="#" onClick="return false">
+                        <a id="add_cart" href="">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -122,12 +144,16 @@
                         </a>
                     </div>
                     <?php
-                        // $qty = $dataProduit->quantite_produit;
+                    }
+                    ?>
+
+                    <?php
+                        $qty = $dataProduit->quantite_produit;
                         // $qty=3;
-                        $qty=0;
+                        // $qty=0;
                         if($qty>5){
                     ?>
-                    <div class="product-availability"><p>Availability : </p><span><span class="dot-stock green-dot"></span> In Stock</span></div>
+                    <div class="product-availability"><p>Availability : </p><span class="dot-stock green-dot"></span> In Stock</div>
                     <?php
                         }
                         elseif ($qty>=1) {
@@ -161,6 +187,41 @@
             $(".size").click(function(){
                 $("#default_size").attr('disabled', '');
             });
+
+            $("#add_cart").click(function(e){
+				e.preventDefault();
+                <?php
+                    if(Auth::check()){
+                ?>
+				$idProduit = <?php echo e($dataProduit->id_produit); ?>;
+				$idUser = <?php echo(Auth::id());?>;
+				$idAction = 0; /*0 = Ajouter au panier | 1 = suppresion | 2 = Valider commande*/
+				$.ajax({
+					url: '/send-data',
+					type: 'GET',
+					data: { id_produit: $idProduit, id_user: $idUser, id_action: $idAction },
+
+					dataType : 'html',
+					success : function(code_html, statut){
+					   alert('Produit ajouté au panier');
+                       document.location.reload(true);
+				   },
+
+				   error : function(resultat, statut, erreur){
+						console.log("statut");
+						console.log("erreur");
+						
+				   },
+
+				   complete : function(resultat, statut){
+
+				   }
+
+				});
+                <?php
+                    }
+                ?>
+			});
         });
 /* Le retour de la valeur par défaut de la taille et de la quantité est impossible
 Soit "Size :" et  "Amount :"*/
