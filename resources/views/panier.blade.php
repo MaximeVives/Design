@@ -48,7 +48,11 @@
                         ?>
                         <div class="list-cart-item">
                             <?php echo('<img class="icon-descr" src="image/'.$imgProd[$i].'_1_ico.png" alt="">');?>
-                            <p class="description"><?php echo($nomProd[$i]);?> : <span class="prix-prod-cart"><?php echo($prixProd[$i]);?>€</span></p>
+                            <p class="description"><?php echo($nomProd[$i]);?> : 
+                            <span class="prix-prod-cart"><?php echo($prixProd[$i]);?>€</span>
+                            <a href="#"><span class="notif-article">-</span></a>
+                            </p>
+                            
                             <span class="id_prod" style="display:none;"><?php echo($idProd[$i]);?></span>
                             <span class="nom_prod" style="display:none;"><?php echo($nomProd[$i]);?></span>
                         </div>
@@ -60,7 +64,7 @@
             ?>
             </div>
 
-            <div class="product-buy">
+            <div class="product-buy-complete">
                 <a id="buy-it" href="#">
                     <span></span>
                     <span></span>

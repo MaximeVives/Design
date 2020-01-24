@@ -1,5 +1,5 @@
 .cart-bloc{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     overflow: hidden;
     background-color: #f6c932;
@@ -11,8 +11,11 @@
 }
 
 .list-cart-item{
+    text-align: center;
+    padding: 25px;
     width: 500px;
     margin: auto;
+    background-color: white;
 }
 
 .description{
@@ -23,6 +26,27 @@
     margin-left: 20px;
 
     /* Il faut une photo des chaussures sans collée au bas de l'image */
+}
+
+.notif-article{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    /* justify-content: center; */
+    color: white;
+    top: 0px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(179, 25, 25);
+}
+
+.product-buy-complete{
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
 }
 
 .icon-descr{
