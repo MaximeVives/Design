@@ -23,16 +23,15 @@
 /*===================================EFFACER DU PANIER===========================*/
 
 		elseif(intval($_GET["id_action"])===1){
-			$iduser = intval($_GET["id_user"]);
-			$idProduct = intval($_GET["id_objet"]);
+			$idpanier = intval($_GET["id_panier"]);
 			
-			$bdd = new PDO('mysql:host=localhost;dbname=bde-cesi;charset=utf8', 'root', 'root');
-			$reponse = $bdd->prepare("CALL DelProduitPanier(:P_user, :P_obj);");
+			$bdd = new PDO('mysql:host=localhost;dbname=design;charset=utf8', 'root', 'root');
+			$reponse = $bdd->prepare("CALL DelProduitPanier(:P_panier);");
 
-			$reponse->execute(array(':P_user' => $iduser, ':P_obj' => $idProduct));
+			$reponse->execute(array(':P_panier' => $idpanier));
 			$reponse->closeCursor();
-			header('Location: /panier');
-  			exit();
+			// header('Location: /panier');
+  			// exit();
 		}
 
 /*=============================VALIDER COMMANDE============================*/
@@ -63,7 +62,7 @@
 			$user = intval(Auth::id());
 
 
-			$reponse->closeCursor();
+			// $reponse->closeCursor();
 			
 
 			$message = "Bonjour, je suis un mail généré par le site de Maxime Vives et envoyé depuis son adresse mail. Le bon de commande suivant n'est qu'un test n'ayez pas peur :
@@ -104,7 +103,7 @@
 			$idEvent = intval($_GET["id_event"]);
 
 
-			$bdd = new PDO('mysql:host=localhost;dbname=bde-cesi;charset=utf8', 'root', 'root');
+			$bdd = new PDO('mysql:host=localhost;dbname=design;charset=utf8', 'root', 'root');
 			$reponse = $bdd->prepare("CALL AjoutParticipant(:P_user, :P_act);");
 
 			$reponse->execute(array(':P_user' => $iduser, ':P_act' => $idEvent));
